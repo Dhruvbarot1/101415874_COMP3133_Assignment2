@@ -1,59 +1,39 @@
-# 101415874DhruvComp3133Assignment2
+# 101415874 DhruvComp3133Assignment2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+This project is part of the COMP3133 - Full Stack Development II course at George Brown College.  
+It is a full-stack web application built using **Angular (Frontend)** and **GraphQL with Node.js/Express & MongoDB (Backend)**.  
+The app provides **user authentication** and **CRUD operations** for managing employee records.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔧 Technologies Used
 
-```bash
-ng serve
-```
+### Frontend:
+- Angular CLI v19.2.3
+- Angular Material
+- Apollo Angular (GraphQL)
+- TypeScript
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Backend:
+- Node.js & Express
+- Apollo Server Express (GraphQL)
+- MongoDB & Mongoose
+- JSON Web Token (JWT) for Auth
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Features
 
-```bash
-ng generate component component-name
-```
+- ✅ Login & Signup using JWT Authentication
+- ✅ Secure session handling via token storage
+- ✅ View, Add, Update, and Delete Employees
+- ✅ Upload Profile Picture (Base64)
+- ✅ Search employees by department or position
+- ✅ Protected Routes using Angular Route Guards
+- ✅ Responsive & modern UI using Angular Material
+- ✅ Fully integrated with GraphQL backend
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
 
-## Building
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
