@@ -1,0 +1,100 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); // ✅ Lighter background
+}
+
+.auth-card {
+  width: 400px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25); // ✅ brighter for light bg
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25); // ✅ softened
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #333; // ✅ darker text for readability
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.auth-card h2 {
+  color: #7c3aed; // ✅ vibrant purple title
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+mat-label {
+  color: #555;
+}
+
+mat-input-element {
+  color: #333; // ✅ visible text
+}
+
+mat-form-field.mat-focused .mat-form-field-outline {
+  color: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  border-color: rgba(0, 0, 0, 0.2); // ✅ softer outline
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 0 12px #a855f7;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #7c3aed;
+}
+
+button[disabled] {
+  background: rgba(255, 255, 255, 0.4);
+  color: #999;
+  box-shadow: none;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

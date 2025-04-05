@@ -1,0 +1,10 @@
+<div class="detail-wrapper">
+  <h2>{{ employee?.firstName }} {{ employee?.lastName }}</h2>
+
+  <p><strong>Email:</strong> {{ employee?.email }}</p>
+  <p><strong>Department:</strong> {{ employee?.department }}</p>
+  <p><strong>Position:</strong> {{ employee?.position }}</p>
+  <p><strong>Joined:</strong> {{ employee?.createdAt | date: 'medium' }}</p>
+
+  <button class="back-button" (click)="goBack()">Back</button>
+</div>

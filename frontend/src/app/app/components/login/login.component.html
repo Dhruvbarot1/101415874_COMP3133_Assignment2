@@ -1,0 +1,29 @@
+<mat-card class="auth-card glass">
+  <h2 class="title">Login 🔐</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Enter your email" required>
+      <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Valid email is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Enter your password" required>
+      <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="submit-button" [disabled]="loginForm.invalid">
+      Login
+    </button>
+  </form>
+
+  <p class="link-text">
+    Don't have an account? <a routerLink="/signup">Sign up</a>
+  </p>
+</mat-card>

@@ -1,0 +1,50 @@
+<mat-card class="employee-container">
+  <div class="header">
+    <h2>Employees</h2>
+    <div class="actions">
+      <button mat-flat-button color="primary" routerLink="/add">Add Employee</button>
+      <button mat-flat-button color="warn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search by Department or Position</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Enter search text" />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="filteredEmployees" class="mat-elevation-z2 full-width-table">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let emp"> {{ emp.firstName }} {{ emp.lastName }} </td>
+    </ng-container>
+
+    <!-- Department Column -->
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef> Department </th>
+      <td mat-cell *matCellDef="let emp"> {{ emp.department }} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Position </th>
+      <td mat-cell *matCellDef="let emp"> {{ emp.position }} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let emp">
+        <div class="action-buttons">
+          <button mat-stroked-button color="primary" (click)="viewDetails(emp)">View</button>
+          <button mat-stroked-button color="accent" (click)="editEmployee(emp.id)">Edit</button>
+          <button mat-stroked-button color="warn" (click)="deleteEmployee(emp.id)">Delete</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

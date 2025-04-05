@@ -1,0 +1,29 @@
+<mat-card class="auth-card">
+  <h2>Sign Up 📝</h2>
+
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Email" required>
+      <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        Valid email is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Password" required>
+      <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">
+      Sign Up
+    </button>
+  </form>
+
+  <p>
+    Already have an account? <a routerLink="/">Login</a>
+  </p>
+</mat-card>
